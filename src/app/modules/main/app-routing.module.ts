@@ -42,8 +42,8 @@ const routes: Routes = [
   {
     path: 'transfer',
     component: TransferComponent,
-    // canActivate: [AngularFireAuthGuard],
-    // data: { authGuardPipe: redirectUnauthorizedToLogin },
+    canActivate: [AngularFireAuthGuard],
+    data: { authGuardPipe: redirectUnauthorizedToLogin },
   },
   {
     path: 'UserComponent',
