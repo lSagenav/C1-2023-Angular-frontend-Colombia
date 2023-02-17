@@ -1,55 +1,8 @@
-<h2>Historial de tranferencias</h2>
-<div class="container mt-5">
-  <div class="row">
-    <div class="col-md-8 mx-auto">
-      <table class="table bg-white rounded border table-hover table-dark">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Users</th>
-            <th scope="col">fecha de la transferencia</th>
-            <th scope="col">numero de cuenta</th>
-            <th scope="col">dinero</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>15/01/2010</td>
-            <td>9898894003</td>
-            <td>125.1248.69$</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>15/01/2010</td>
-            <td>9898894003</td>
-            <td>125.1248.69$</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>15/01/2010</td>
-            <td>9898894003</td>
-            <td>125.1248.69$</td>
-          </tr>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>15/01/2010</td>
-            <td>9898894003</td>
-            <td>125.1248.69$</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>15/01/2010</td>
-            <td>9898894003</td>
-            <td>125.1248.69$</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</div>
+<p>transfer works!</p>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <input formControlName="income" placeholder="income" />
+  <input formControlName="outcome" placeholder="outcome" />
+  <input formControlName="amount" placeholder="amount" />
+  <input formControlName="reason" placeholder="reason" />
+  <button type="submit">submit</button>
+</form>

@@ -10,6 +10,7 @@ import { AuthService } from '../../services/auth/auth.service';
 export class IndexComponent {
   frmLogin: FormGroup;
   routeRegister: string[];
+  frmFormulario: FormGroup = new FormGroup({});
 
   constructor(private readonly authService: AuthService) {
     this.routeRegister = ['register'];
@@ -18,6 +19,22 @@ export class IndexComponent {
       password: new FormControl(null, Validators.required),
     });
   }
+
+  // eslint-disable-next-line @angular-eslint/use-lifecycle-interface
+  ngOnInit(): void {
+    this.htmlformulario();
+  }
+  htmlformulario(): void {
+    this.frmFormulario = new FormGroup({
+      email: new FormControl('', [Validators.required, Validators.email]),
+      password: new FormControl('', [
+        Validators.required,
+        Validators.minLength(6),
+        Validators.maxLength(20),
+      ]),
+    });
+  }
+
   auth(): void {
     this.authService.GoogleAuth();
   }

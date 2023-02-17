@@ -1,32 +1,35 @@
-<div class="container">
-  <div class="row">
-    <div class="col">
-      <table class="table table-striped table-bordered table-hover">
-        <thead>
-          <tr>
-            <th>documentTypeId</th>
-            <th>document</th>
-            <th>fullName</th>
-            <th>email</th>
-            <th>phone</th>
-            <th>password</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let users of users" class="table">
-            <td>{{ users.documentType.id }}</td>
-            <td>{{ users.document }}</td>
-            <td>{{ users.fullName }}</td>
-            <td>{{ users.email }}</td>
-            <td>{{ users.phone }}</td>
-            <td>{{ users.password }}</td>
-          </tr>
-        </tbody>
-      </table>
+<div *ngIf="users">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <table class="table table-striped table-bordered table-hover">
+          <thead>
+            <tr>
+              <th>documentTypeId</th>
+              <th>document</th>
+              <th>fullName</th>
+              <th>email</th>
+              <th>phone</th>
+              <th>password</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let users of users" class="table">
+              <td>{{ users.documentType.id }}</td>
+              <td>{{ users.document }}</td>
+              <td>{{ users.fullName | uppercase }}</td>
+              <td>{{ users.email }}</td>
+              <td>{{ users.phone | phone }}</td>
+              <td>{{ users.password }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
+    <button type="button" (click)="logout()">cerrar Sesion</button>
   </div>
+  <br />
 </div>
-<br />
 
 <!-- <body></body>
 <div class="div-table">

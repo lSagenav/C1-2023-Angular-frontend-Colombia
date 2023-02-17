@@ -47,7 +47,8 @@
             "regexp": "Compiled |Failed to compile."
           }
         }
-      }
+      },
+      "detail": "ng serve --host=127.0.0.1"
     },
     {
       "type": "npm",

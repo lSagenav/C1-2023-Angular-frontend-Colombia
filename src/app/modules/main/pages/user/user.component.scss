@@ -1,0 +1,26 @@
+body {
+    background-color: #fafafa;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    padding: 30px
+}
+
+.div-table {
+    display: table;
+    width: 100%;
+    overflow: scroll;
+    background-color: #b17878;
+    border-spacing: 2px;
+    border-radius:4px;
+}
+
+.trow {
+    display: table-row
+}
+
+.tcolumn {
+    display: table-cell;
+    vertical-align: top;
+    background-color: #f8faff;
+    padding: 10px 8px
+}

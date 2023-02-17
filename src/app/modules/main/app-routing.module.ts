@@ -10,9 +10,10 @@ import {
   redirectLoggedInTo,
   redirectUnauthorizedTo,
 } from '@angular/fire/compat/auth-guard';
+import { UserComponent } from './pages/user/user.component';
 
 const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['login']);
-const redirectLoggedInToinfouser = () => redirectLoggedInTo(['infouser']);
+const redirectLoggedInToinfouser = () => redirectLoggedInTo(['UserComponent']);
 
 const routes: Routes = [
   {
@@ -24,21 +25,30 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent,
-    canActivate: [AngularFireAuthGuard],
-    data: { authGuardPipe: redirectUnauthorizedToLogin },
   },
 
   {
     path: 'infouser',
     component: InfoUserComponent,
+    canActivate: [AngularFireAuthGuard],
+    data: { authGuardPipe: redirectUnauthorizedToLogin },
   },
   {
     path: 'deposit',
     component: DepositComponent,
+    canActivate: [AngularFireAuthGuard],
+    data: { authGuardPipe: redirectUnauthorizedToLogin },
   },
   {
     path: 'transfer',
     component: TransferComponent,
+    // canActivate: [AngularFireAuthGuard],
+    // data: { authGuardPipe: redirectUnauthorizedToLogin },
+  },
+  {
+    path: 'UserComponent',
+    component: UserComponent,
+    data: { authGuardPipe: redirectUnauthorizedToLogin },
   },
 ];
 

@@ -12,7 +12,7 @@ export class AuthService {
   // Sign in with Google
   GoogleAuth() {
     return this.AuthLogin(new auth.GoogleAuthProvider()).then((res: any) => {
-      this.router.navigate(['infouser']);
+      this.router.navigate(['UserComponent']);
     });
   }
   // Auth logic to run auth providers
@@ -20,12 +20,19 @@ export class AuthService {
     return this.afAuth
       .signInWithPopup(provider)
       .then(result => {
-        this.router.navigate(['infouser']);
+        this.router.navigate(['UserComponent']);
         console.log(result);
         // this.SetUserData(result.user);
       })
       .catch(error => {
         window.alert(error);
       });
+  }
+
+  SignOut() {
+    return this.afAuth.signOut().then(() => {
+      localStorage.removeItem('users');
+      this.router.navigate(['']);
+    });
   }
 }

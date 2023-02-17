@@ -3,7 +3,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 @Pipe({
   name: 'phone',
 })
-export class PhoneCorrectionnPipe implements PipeTransform {
+export class PhonePipe implements PipeTransform {
   transform(value: string): string {
     if (!value) {
       return 'el numero no existe';
@@ -14,7 +14,7 @@ export class PhoneCorrectionnPipe implements PipeTransform {
     if (match) {
       return match[1] + '-' + match[2] + '-' + match[3];
     }
-
+    console.log('hola piipe', value);
     return value;
   }
 }

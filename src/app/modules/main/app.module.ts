@@ -17,6 +17,10 @@ import { environment } from '../../../environments/environment';
 
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { PhonePipe } from './pipes/phone.pipe';
+import { UserComponent } from './pages/user/user.component';
+import { UserHomeComponent } from './components/user-home/user-home.component';
+import { TransferComponent } from './pages/transfer/transfer.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +31,10 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
     InfoUserComponent,
     DepositComponent,
     UpdateUserComponent,
+    PhonePipe,
+    UserComponent,
+    UserHomeComponent,
+    TransferComponent,
   ],
   imports: [
     BrowserModule,
