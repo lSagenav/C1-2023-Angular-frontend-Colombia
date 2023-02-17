@@ -27,6 +27,6 @@ export class TransferComponent {
       reason: this.form.value.reason,
     };
     const data = await this.serviceTransfer.getAllTransfer(input);
-    console.log('dataaa', input);
+    console.log('Date Transfer', input);
   }
 }
