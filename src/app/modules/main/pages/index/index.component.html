@@ -5,7 +5,7 @@
       alt="" />
   </div>
   <div class="text-center mt-4 name">Banco Scorpion</div>
-  <form class="p-3 mt-3" id="login" [formGroup]="frmLogin">
+  <form class="p-3 mt-3" id="login" [formGroup]="frmFormulario">
     <div>
       <div class="row">
         <label>Email</label>
@@ -18,8 +18,8 @@
           <div
             class="altoMensaje"
             *ngIf="
-              frmLogin.get('email')?.hasError('required') &&
-              frmLogin.get('email')?.touched
+              frmFormulario.get('email')?.hasError('required') &&
+              frmFormulario.get('email')?.touched
             ">
             el email es requerido
           </div>
@@ -36,20 +36,17 @@
           <div
             class="altoMensaje"
             *ngIf="
-              frmLogin.get('password')?.hasError('required') &&
-              frmLogin.get('password')?.touched
+              frmFormulario.get('password')?.hasError('required') &&
+              frmFormulario.get('password')?.touched
             ">
             la contraseña es requerido
           </div>
         </div>
       </div>
     </div>
-    <button class="btn mt-3" type="submit" (click)="sendLogin()">Login</button>
+    <button class="btn mt-3" (click)="sendLogin()">Login</button>
   </form>
   <div class="text-center fs-6">
-    <button type="button" class="btn btn-primary" [routerLink]="routeRegister">
-      register
-    </button>
     <button type="button" (click)="auth()">Google</button>
   </div>
   <a href="#">Forget password?</a>

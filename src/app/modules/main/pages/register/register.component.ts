@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { environment } from 'src/environments/environment.prod';
 import { UsersService } from '../../services/users/users.service';
+import { AuthService } from '../../services/auth/auth.service';
 
 @Component({
   selector: 'sofka-register',
@@ -12,7 +13,10 @@ export class RegisterComponent {
   frmFormulario: FormGroup;
   routrHome: string[];
 
-  constructor(private readonly user$: UsersService) {
+  constructor(
+    private readonly user$: UsersService,
+    private readonly authService: AuthService
+  ) {
     this.routrHome = ['../'];
     this.frmFormulario = new FormGroup({
       documentTypeId: new FormControl(null, Validators.required),
@@ -32,15 +36,20 @@ export class RegisterComponent {
     });
   }
   senData(): void {
-    console.log('senData', this.frmFormulario);
-    console.log(this.frmFormulario.getRawValue());
-    this.user$.createUser(this.frmFormulario.getRawValue()).subscribe({
-      next: data => {
-        localStorage.setItem('id', data.id);
-        localStorage.setItem('accestoken', data.access_token);
-      },
-      error: err => console.error(err),
-      complete: () => console.info('completado'),
-    });
+    // console.log('senData', this.frmFormulario);
+    // console.log(this.frmFormulario.getRawValue());
+    // this.user$.createUser(this.frmFormulario.getRawValue()).subscribe({
+    //   next: data => {
+    //     localStorage.setItem('id', data.id);
+    //     localStorage.setItem('accestoken', data.access_token);
+    //   },
+    //   error: err => console.error(err),
+    //   complete: () => console.info('completado'),
+    // });
+    this.authService.SignUp(
+      this.frmFormulario.get('email')?.value,
+      this.frmFormulario.get('password')?.value,
+      this.frmFormulario.getRawValue()
+    );
   }
 }

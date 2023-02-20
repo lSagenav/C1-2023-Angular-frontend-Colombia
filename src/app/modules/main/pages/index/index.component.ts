@@ -9,26 +9,12 @@ import { LoginService } from '../../services/login/login.service';
   styleUrls: ['./index.component.scss'],
 })
 export class IndexComponent {
-  frmLogin: FormGroup;
-  routeRegister: string[];
-  frmFormulario: FormGroup = new FormGroup({});
+  frmFormulario: FormGroup;
 
   constructor(
     private readonly authService: AuthService,
     private loginService: LoginService
   ) {
-    this.routeRegister = ['register'];
-    this.frmLogin = new FormGroup({
-      email: new FormControl(null, Validators.required),
-      password: new FormControl(null, Validators.required),
-    });
-  }
-
-  // eslint-disable-next-line @angular-eslint/use-lifecycle-interface
-  ngOnInit(): void {
-    this.htmlformulario();
-  }
-  htmlformulario(): void {
     this.frmFormulario = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [
@@ -43,15 +29,21 @@ export class IndexComponent {
     this.authService.GoogleAuth();
   }
   sendLogin() {
-    const { email, password } = this.frmFormulario.value;
-    this.loginService.sendLogin(email, password).subscribe({
-      next: token => {
-        localStorage.setItem('token', token.access_token);
-        localStorage.setItem('id', token.id);
-      },
-      error: err => {
-        console.log(err.error);
-      },
-    });
+    console.log('envio de informacion');
+    this.loginService
+      .sendLogin(
+        this.frmFormulario.get('email')?.getRawValue(),
+        this.frmFormulario.get('password')?.getRawValue()
+      )
+      .subscribe({
+        next: token => {
+          console.log(token);
+          localStorage.setItem('token', token.access_token);
+          localStorage.setItem('id', token.id);
+        },
+        error: err => {
+          console.log(err.error);
+        },
+      });
   }
 }
