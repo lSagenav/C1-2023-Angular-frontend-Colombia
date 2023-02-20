@@ -37,7 +37,10 @@ export class RegisterComponent {
     this.user$.createUser(this.frmFormulario.getRawValue()).subscribe({
       next: data => {
         localStorage.setItem('id', data.id);
+        localStorage.setItem('accestoken', data.access_token);
       },
+      error: err => console.error(err),
+      complete: () => console.info('completado'),
     });
   }
 }

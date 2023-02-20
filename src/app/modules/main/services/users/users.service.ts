@@ -14,7 +14,7 @@ export class UsersService {
 
   createUser(user: newUserModel): Observable<INewUSer> {
     return this.httpClient.post<INewUSer>(
-      'http://localhost:3000/customers/',
+      'http://localhost:3000/security/sign-up/',
       user
     );
   }

@@ -20,7 +20,6 @@ export class UserHomeComponent {
   }
   // eslint-disable-next-line @angular-eslint/use-lifecycle-interface
   ngOnInit(): void {
-    const idStorage = localStorage.getItem('id') as string;
     this.usersService.infoUser().subscribe({
       next: data => {
         (this.users = data), console.log(data);
