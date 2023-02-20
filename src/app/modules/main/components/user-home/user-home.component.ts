@@ -1,31 +1,39 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { IUsers } from '../../interfaces/users.interface';
+import { AccountInterface } from '../../interfaces/account.interface';
 import { AuthService } from '../../services/auth/auth.service';
 import { UsersService } from '../../services/users/users.service';
-import { OnInit } from '@angular/core';
 @Component({
   selector: 'sofka-user-home',
   templateUrl: './user-home.component.html',
   styleUrls: ['./user-home.component.scss'],
 })
 export class UserHomeComponent {
-  users: IUsers[];
+  accounts: AccountInterface[];
   constructor(
     private readonly router: Router,
     private readonly usersService: UsersService,
     private readonly authService: AuthService
   ) {
-    this.users = [];
+    this.accounts = new Array<AccountInterface>();
   }
+
   // eslint-disable-next-line @angular-eslint/use-lifecycle-interface
   ngOnInit(): void {
-    this.usersService.infoUser().subscribe({
+    const idStorage = localStorage.getItem('id') as string;
+    console.log(localStorage.getItem('token'));
+
+    this.usersService.getAccountById(idStorage).subscribe({
       next: data => {
-        (this.users = data), console.log(data);
+        console.log(data);
+        this.accounts = data;
       },
-      error: err => console.error(err),
-      complete: () => console.log('complete'),
+      error: err => {
+        console.error(err);
+      },
+      complete: () => {
+        console.log('complete');
+      },
     });
   }
   redirect() {

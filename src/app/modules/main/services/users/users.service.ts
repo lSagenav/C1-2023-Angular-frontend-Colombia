@@ -22,9 +22,9 @@ export class UsersService {
     return this.httpClient.get<IUsers[]>('http://localhost:3000/customers/');
   }
 
-  getAccountById(id: string): Observable<IUsers[]> {
-    return this.httpClient.get<IUsers[]>(
-      'http://localhost:3000/customers/' + id
+  getAccountById(id: string): Observable<AccountInterface[]> {
+    return this.httpClient.get<AccountInterface[]>(
+      'http://localhost:3000/account/getAccount/' + id
     );
   }
 }

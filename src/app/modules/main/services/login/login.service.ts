@@ -13,6 +13,9 @@ export class LoginService {
       email: email,
       password: password,
     };
-    return this.http.post<IUsers>('http://localhost:3000/', body);
+    return this.http.post<IUsers>(
+      'http://localhost:3000/security/signIn',
+      body
+    );
   }
 }
