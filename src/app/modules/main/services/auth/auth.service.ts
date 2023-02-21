@@ -1,3 +1,4 @@
+import { LoginService } from './../login/login.service';
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
@@ -18,7 +19,8 @@ export class AuthService {
     private router: Router,
     private afAuth: AngularFireAuth,
     public afs: AngularFirestore,
-    private readonly user$: UsersService
+    private readonly user$: UsersService,
+    private readonly loginService: LoginService
   ) {}
 
   // Sign in with Google
@@ -41,7 +43,7 @@ export class AuthService {
       });
   }
 
-  singWithEmail(email: string, password: string, user: IUsers) {
+  singWithEmail(email: string, password: string) {
     return this.afAuth
       .signInWithEmailAndPassword(email, password)
       .then(result => {
@@ -50,6 +52,21 @@ export class AuthService {
           if (user) {
             this.router.navigate(['dashboard']);
           }
+        });
+        this.loginService.sendLogin(email, password).subscribe({
+          next: data => {
+            localStorage.setItem('access_Token', data.access_token);
+            localStorage.setItem('id', data.id);
+            localStorage.setItem('user', JSON.stringify(result.user));
+            localStorage.setItem('uid', result.user?.uid ?? '');
+            result.user
+              ?.getIdToken()
+              .then(token => localStorage.setItem('token', token));
+            this.router.navigate(['UserComponent']);
+          },
+          error: err => {
+            console.log(err);
+          },
         });
       })
       .catch(error => {
@@ -62,7 +79,14 @@ export class AuthService {
       .then(result => {
         this.user$.createUser(users).subscribe({
           next: data => {
-            console.log(data);
+            localStorage.setItem('access_Token', data.access_token);
+            localStorage.setItem('id', data.id);
+            localStorage.setItem('user', JSON.stringify(result.user));
+            localStorage.setItem('uid', result.user?.uid ?? '');
+            result.user
+              ?.getIdToken()
+              .then(token => localStorage.setItem('token', token));
+            this.router.navigate(['UserComponent']);
           },
           error: err => {
             console.log(err);
