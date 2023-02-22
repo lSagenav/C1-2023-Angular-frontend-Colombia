@@ -1,37 +1,20 @@
-<!-- <p>user-home works! user logeado</p>
+<div>Hola Depositos</div>
 <div>
   <div class="container">
-    <div class="row">
-      <div class="col">
-        <table class="table table-striped table-bordered table-hover">
-          <thead>
-            <tr>
-              <th>documentTypeId</th>
-              <th>document</th>
-              <th>fullName</th>
-              <th>email</th>
-              <th>phone</th>
-              <th>password</th>
-              <th>Amount</th>
-              <th>State</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let users of accounts" class="table">
-              <td>{{ users.id }}</td>
-              <td>{{ users.customer.document }}</td>
-              <td>{{ users.customer.fullName | uppercase }}</td>
-              <td>{{ users.customer.email }}</td>
-              <td>{{ users.customer.phone | phone }}</td>
-              <td>{{ users.customer.password }}</td>
-              <td>{{ users.balance }}</td>
-              <td>{{ users.state }}</td>
-            </tr>
-          </tbody>
-        </table>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="space"></div>
+      <div class="placeholder">
+        <input class="input" formControlName="account" placeholder="account" />
       </div>
-    </div>
+      <div class="space"></div>
+      <div class="input1">
+        <input formControlName="amount" placeholder="amount" />
+      </div>
+      <div class="space"></div>
+      <div>
+        <button class="submit">Submit</button>
+      </div>
+      <div class="space"></div>
+    </form>
   </div>
-  <br />
-</div> -->
-<div>Hola Depositos</div>
+</div>
