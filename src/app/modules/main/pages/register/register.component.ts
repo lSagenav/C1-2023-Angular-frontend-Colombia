@@ -19,33 +19,23 @@ export class RegisterComponent {
   ) {
     this.routrHome = ['../'];
     this.frmFormulario = new FormGroup({
-      documentTypeId: new FormControl(null, Validators.required),
-      document: new FormControl(null, Validators.required),
-      fullName: new FormControl(null, [
+      documentTypeId: new FormControl('', Validators.required),
+      document: new FormControl('', Validators.required),
+      fullName: new FormControl('', [
         Validators.required,
         Validators.minLength(4),
         Validators.maxLength(100),
       ]),
-      email: new FormControl(null, [
+      email: new FormControl('', [
         Validators.required,
         Validators.email,
         Validators.pattern(new RegExp(environment.regexEmail)),
       ]),
-      phone: new FormControl(null, [Validators.required]),
-      password: new FormControl(null, Validators.required),
+      phone: new FormControl('', [Validators.required]),
+      password: new FormControl('', Validators.required),
     });
   }
   senData(): void {
-    // console.log('senData', this.frmFormulario);
-    // console.log(this.frmFormulario.getRawValue());
-    // this.user$.createUser(this.frmFormulario.getRawValue()).subscribe({
-    //   next: data => {
-    //     localStorage.setItem('id', data.id);
-    //     localStorage.setItem('accestoken', data.access_token);
-    //   },
-    //   error: err => console.error(err),
-    //   complete: () => console.info('completado'),
-    // });
     this.authService.SignUp(
       this.frmFormulario.get('email')?.value,
       this.frmFormulario.get('password')?.value,

@@ -1,66 +1,37 @@
-<div class="container">
-  <div class="card">
-    <div class="payment-details">
-      <h3>informacion de depositos</h3>
-      <p>Complete your purchase by providing your payment details.</p>
-    </div>
-    <div class="input-text">
-      <input type="text" placeholder="luke@skywalker.com" />
-      <span>Email</span>
-    </div>
-    <div class="input-text">
-      <input
-        type="text"
-        placeholder="0000 0000 0000 0000"
-        data-slots="0"
-        data-accept="\d" />
-      <span>Card Details</span>
-    </div>
-    <div class="input-text-cvv">
-      <input type="text" placeholder="mm/yyyy" data-slots="my" />
-      <!--<span>Card Details</span>-->
-    </div>
-    <div class="input-text-cvv cvv">
-      <input
-        type="text"
-        placeholder="000"
-        data-slots="0"
-        data-accept="\d"
-        size="3" />
-      <!--<span>Card Details</span>-->
-    </div>
-    <div class="input-text">
-      <input type="text" placeholder="Username" />
-      <span>Card Holder name</span>
-    </div>
-
-    <div class="input-text">
-      <input type="text" placeholder="GB0124589" />
-      <span>Vat Number</span>
-    </div>
-    <div class="input-text">
-      <input type="text" placeholder="BLACKWEDNESDAY" />
-      <span>Discount code</span>
-    </div>
-    <div class="summary">
-      <div class="text-data">
-        <p>Subtotal</p>
-        <p>Discount</p>
-        <p>VAT(20%)</p>
-        <h5>Total</h5>
-      </div>
-      <div class="numerical-data">
-        <p>$19.00</p>
-        <p>$5.00</p>
-        <p>$2.80</p>
-        <h5>$16.80</h5>
+<!-- <p>user-home works! user logeado</p>
+<div>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <table class="table table-striped table-bordered table-hover">
+          <thead>
+            <tr>
+              <th>documentTypeId</th>
+              <th>document</th>
+              <th>fullName</th>
+              <th>email</th>
+              <th>phone</th>
+              <th>password</th>
+              <th>Amount</th>
+              <th>State</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let users of accounts" class="table">
+              <td>{{ users.id }}</td>
+              <td>{{ users.customer.document }}</td>
+              <td>{{ users.customer.fullName | uppercase }}</td>
+              <td>{{ users.customer.email }}</td>
+              <td>{{ users.customer.phone | phone }}</td>
+              <td>{{ users.customer.password }}</td>
+              <td>{{ users.balance }}</td>
+              <td>{{ users.state }}</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
-    <button
-      type="button"
-      class="btn btn-secondary"
-      [routerLink]="['../transfer']">
-      Historial de transferencias
-    </button>
   </div>
-</div>
+  <br />
+</div> -->
+<div>Hola Depositos</div>

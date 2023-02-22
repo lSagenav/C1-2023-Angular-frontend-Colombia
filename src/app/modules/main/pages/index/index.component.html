@@ -47,6 +47,12 @@
     <button class="btn mt-3" (click)="sendLogin()">Login</button>
   </form>
   <div class="text-center fs-6">
+    <button
+      type="button"
+      class="btn btn-secondary"
+      [routerLink]="['../register']">
+      Registro
+    </button>
     <button type="button" (click)="auth()">Google</button>
   </div>
   <a href="#">Forget password?</a>

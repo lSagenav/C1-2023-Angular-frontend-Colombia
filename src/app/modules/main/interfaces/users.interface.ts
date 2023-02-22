@@ -1,6 +1,7 @@
 import { IDocumenType } from './document-type.interface';
 
 export interface IUsers {
+  amount: string;
   documentType: IDocumenType;
   id: string;
   document: string;

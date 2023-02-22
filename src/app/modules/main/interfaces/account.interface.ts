@@ -5,6 +5,7 @@ export interface AccountInterface {
   balance: number;
   state: boolean;
   customer: IUsers;
+  amount: string;
   accountType: {
     id: string;
     name: string;

@@ -74,6 +74,7 @@ export class AuthService {
       });
   }
   SignUp(email: string, password: string, users: newUserModel) {
+    console.log(users);
     return this.afAuth
       .createUserWithEmailAndPassword(email, password)
       .then(result => {

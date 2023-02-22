@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { TransferService } from '../../services/transfer/transfer.service';
 
@@ -9,8 +9,11 @@ import { TransferService } from '../../services/transfer/transfer.service';
 })
 /* The TransferComponent class is a component that has a form with four controls: income, outcome,
 amount, and reason */
-export class TransferComponent {
+export class TransferComponent implements OnInit {
   constructor(private readonly serviceTransfer: TransferService) {}
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
+  }
 
   form = new FormGroup({
     income: new FormControl('', Validators.minLength(2)),

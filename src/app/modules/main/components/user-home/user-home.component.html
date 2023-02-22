@@ -12,16 +12,31 @@
               <th>email</th>
               <th>phone</th>
               <th>password</th>
+              <th>Account</th>
+              <th>Balance</th>
+              <th>State</th>
             </tr>
           </thead>
           <tbody>
             <tr *ngFor="let users of accounts" class="table">
-              <td>{{ users.id }}</td>
+              <td>{{ users.customer.documentType.name }}</td>
               <td>{{ users.customer.document }}</td>
               <td>{{ users.customer.fullName | uppercase }}</td>
               <td>{{ users.customer.email }}</td>
-              <td>{{ users.customer.password }}</td>
               <td>{{ users.customer.phone | phone }}</td>
+              <td type="password">
+                <input
+                  class="password"
+                  disabled
+                  type="password"
+                  value="{{ users.customer.password }}" />
+              </td>
+              <td>
+                <p>{{ users.accountType.name }}</p>
+                <p>{{ users.id }}</p>
+              </td>
+              <td>{{ users.balance }}</td>
+              <td>{{ users.state }}</td>
             </tr>
           </tbody>
         </table>
