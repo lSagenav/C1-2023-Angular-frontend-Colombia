@@ -56,10 +56,14 @@ const routes: Routes = [
   {
     path: 'depositHistory',
     component: DepositHistoryComponent,
+    canActivate: [AngularFireAuthGuard],
+    data: { authGuardPipe: redirectUnauthorizedToLogin },
   },
   {
     path: 'transferHistory',
     component: TransferHistoryComponent,
+    canActivate: [AngularFireAuthGuard],
+    data: { authGuardPipe: redirectUnauthorizedToLogin },
   },
 ];
 

@@ -22,6 +22,7 @@ import { PhonePipe } from './pipes/phone.pipe';
 import { UserComponent } from './pages/user/user.component';
 import { UserHomeComponent } from './components/user-home/user-home.component';
 import { TransferComponent } from './pages/transfer/transfer.component';
+import { NarvarComponent } from './components/narvar/narvar.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { TransferComponent } from './pages/transfer/transfer.component';
     UserHomeComponent,
     TransferComponent,
     TransferHistoryComponent,
+    NarvarComponent,
   ],
   imports: [
     BrowserModule,
