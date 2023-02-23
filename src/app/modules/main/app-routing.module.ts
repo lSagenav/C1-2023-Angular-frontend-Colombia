@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { IndexComponent } from './pages/index/index.component';
-import { RegisterComponent } from './pages/register/register.component';
+import { IndexComponent } from '../auth/pages/Login/index.component';
+import { RegisterComponent } from '../auth/pages/register/register.component';
 import { InfoUserComponent } from './pages/info-user/info-user.component';
 import { DepositComponent } from './pages/deposit/deposit.component';
 import { TransferComponent } from './pages/transfer/transfer.component';

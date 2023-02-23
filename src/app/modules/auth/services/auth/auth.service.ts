@@ -3,13 +3,12 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
 import * as auth from 'firebase/auth';
-import { IUsers } from '../../interfaces/users.interface';
 import {
   AngularFirestore,
   AngularFirestoreDocument,
 } from '@angular/fire/compat/firestore';
-import { UsersService } from '../users/users.service';
-import { newUserModel } from '../../models/new-user.model';
+import { UsersService } from '../../../main/services/users/users.service';
+import { newUserModel } from '../../../main/models/new-user.model';
 
 @Injectable({
   providedIn: 'root',

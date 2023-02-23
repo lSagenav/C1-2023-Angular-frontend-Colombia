@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AccountInterface } from '../../interfaces/account.interface';
-import { AuthService } from '../../services/auth/auth.service';
+import { AuthService } from '../../../auth/services/auth/auth.service';
 import { UsersService } from '../../services/users/users.service';
 @Component({
   selector: 'sofka-user-home',

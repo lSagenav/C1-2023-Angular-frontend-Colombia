@@ -1,4 +1,4 @@
-import { IUsers } from './users.interface';
+import { IUsers } from '../../auth/interfaces/users.interface';
 
 export interface AccountInterface {
   id: string;

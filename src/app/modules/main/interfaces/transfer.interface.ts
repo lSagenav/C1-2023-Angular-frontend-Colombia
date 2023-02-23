@@ -1,4 +1,4 @@
-import { userInterface } from './user-get.interface';
+import { userInterface } from '../../auth/interfaces/user-get.interface';
 
 export interface TransferInterface {
   id: string;

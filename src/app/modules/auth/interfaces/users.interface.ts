@@ -1,4 +1,4 @@
-import { IDocumenType } from './document-type.interface';
+import { IDocumenType } from '../../main/interfaces/document-type.interface';
 
 export interface IUsers {
   amount: string;

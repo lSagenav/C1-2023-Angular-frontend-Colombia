@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { INewUSer } from '../../interfaces/newUser.interface';
 import { Observable } from 'rxjs';
-import { IUsers } from '../../interfaces/users.interface';
+import { IUsers } from '../../../auth/interfaces/users.interface';
 import { AccountInterface } from '../../interfaces/account.interface';
 
 @Injectable({

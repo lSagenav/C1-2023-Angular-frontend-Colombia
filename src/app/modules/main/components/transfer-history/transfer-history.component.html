@@ -28,7 +28,7 @@
           <tr *ngFor="let transfer of historyTransfer">
             <td>{{ transfer.outCome.id }}</td>
             <td>{{ transfer.inCome.id }}</td>
-            <td>{{ transfer.amount }}</td>
+            <td>{{ transfer.amount | currency }}</td>
             <td>{{ transfer.dateTime | date : 'dd/MM/yyyy' }}</td>
             <td>{{ transfer.reason }}</td>
           </tr>
