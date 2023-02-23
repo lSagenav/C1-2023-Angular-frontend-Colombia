@@ -11,6 +11,8 @@ import {
   redirectUnauthorizedTo,
 } from '@angular/fire/compat/auth-guard';
 import { UserComponent } from './pages/user/user.component';
+import { DepositHistoryComponent } from './components/deposit-history/deposit-history.component';
+import { TransferHistoryComponent } from './components/transfer-history/transfer-history.component';
 
 const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['login']);
 const redirectLoggedInToinfouser = () => redirectLoggedInTo(['UserComponent']);
@@ -50,6 +52,14 @@ const routes: Routes = [
     component: UserComponent,
     canActivate: [AngularFireAuthGuard],
     data: { authGuardPipe: redirectUnauthorizedToLogin },
+  },
+  {
+    path: 'depositHistory',
+    component: DepositHistoryComponent,
+  },
+  {
+    path: 'transferHistory',
+    component: TransferHistoryComponent,
   },
 ];
 

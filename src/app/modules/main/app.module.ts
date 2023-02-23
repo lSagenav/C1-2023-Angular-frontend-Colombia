@@ -1,3 +1,4 @@
+import { TransferHistoryComponent } from './components/transfer-history/transfer-history.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { SharedModule } from 'src/app/shared/shared.module';
@@ -35,6 +36,7 @@ import { TransferComponent } from './pages/transfer/transfer.component';
     UserComponent,
     UserHomeComponent,
     TransferComponent,
+    TransferHistoryComponent,
   ],
   imports: [
     BrowserModule,

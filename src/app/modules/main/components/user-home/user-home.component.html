@@ -17,8 +17,8 @@
               <th>State</th>
             </tr>
           </thead>
-          <tbody>
-            <tr *ngFor="let users of accounts" class="table">
+          <tbody *ngFor="let users of accounts">
+            <tr class="table">
               <td>{{ users.customer.documentType.name }}</td>
               <td>{{ users.customer.document }}</td>
               <td>{{ users.customer.fullName | uppercase }}</td>
@@ -35,9 +35,12 @@
                 <p>{{ users.accountType.name }}</p>
                 <p>{{ users.id }}</p>
               </td>
-              <td>{{ users.balance }}</td>
+              <td>{{ users.balance | currency }}</td>
               <td>{{ users.state }}</td>
             </tr>
+            <button type="button" (click)="envioid(users.id)">
+              ver Historial
+            </button>
           </tbody>
         </table>
       </div>

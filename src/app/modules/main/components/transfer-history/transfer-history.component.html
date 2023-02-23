@@ -1,0 +1,38 @@
+<p>transfer-history works!</p>
+<header>
+  <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+    <h1 class="display-4 fw-normal">Historial De Tranferencias</h1>
+    <p class="fs-5 text-muted">Scorpion Bank</p>
+    <!-- <p style="text-align: center">
+      <img
+        src="https://t4.ftcdn.net/jpg/04/22/92/29/360_F_422922955_XaGCE7Nqe8DyLiY7mGe5SACyp8N4oHTB.jpg"
+        alt="Logo InternetCtrl" />
+    </p> -->
+  </div>
+</header>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-8 mx-auto">
+      <table class="table bg-white rounded border">
+        <thead>
+          <tr>
+            <th scope="col">outcome</th>
+            <th scope="col">income</th>
+            <th scope="col">amount</th>
+            <th scope="col">date</th>
+            <th scope="col">reason</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let transfer of historyTransfer">
+            <td>{{ transfer.outCome.id }}</td>
+            <td>{{ transfer.inCome.id }}</td>
+            <td>{{ transfer.amount }}</td>
+            <td>{{ transfer.dateTime | date : 'dd/MM/yyyy' }}</td>
+            <td>{{ transfer.reason }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

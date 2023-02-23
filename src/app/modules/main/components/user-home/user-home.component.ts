@@ -17,7 +17,10 @@ export class UserHomeComponent {
   ) {
     this.accounts = new Array<AccountInterface>();
   }
-
+  envioid(id: string) {
+    localStorage.setItem('idcuenta', id);
+    this.router.navigate(['transferHistory']);
+  }
   // eslint-disable-next-line @angular-eslint/use-lifecycle-interface
   ngOnInit(): void {
     const idStorage = localStorage.getItem('id') as string;

@@ -128,7 +128,7 @@
         <button
           type="reset"
           class="btn btn-secondary"
-          [disabled]="frmFormulario.valid"
+          [disabled]="frmFormulario.invalid"
           (click)="senData()">
           registrar
         </button>
@@ -136,6 +136,7 @@
     </div>
   </div>
 </form>
+<button (click)="conlole()">console</button>
 <div>&nbsp;</div>
 
 <!-- modificando algunos datos de formulario -->

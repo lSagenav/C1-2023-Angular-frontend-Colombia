@@ -29,22 +29,6 @@ export class IndexComponent {
     this.authService.GoogleAuth();
   }
   sendLogin() {
-    // console.log('envio de informacion');
-    // this.loginService
-    //   .sendLogin(
-    //     this.frmFormulario.get('email')?.getRawValue(),
-    //     this.frmFormulario.get('password')?.getRawValue()
-    //   )
-    //   .subscribe({
-    //     next: token => {
-    //       console.log(token);
-    //       localStorage.setItem('token', token.access_token);
-    //       localStorage.setItem('id', token.id);
-    //     },
-    //     error: err => {
-    //       console.log(err.error);
-    //     },
-    //   });
     this.authService.singWithEmail(
       this.frmFormulario.get('email')?.getRawValue(),
       this.frmFormulario.get('password')?.getRawValue()

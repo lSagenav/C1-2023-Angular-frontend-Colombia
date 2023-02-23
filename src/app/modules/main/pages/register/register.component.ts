@@ -26,11 +26,7 @@ export class RegisterComponent {
         Validators.minLength(4),
         Validators.maxLength(100),
       ]),
-      email: new FormControl('', [
-        Validators.required,
-        Validators.email,
-        Validators.pattern(new RegExp(environment.regexEmail)),
-      ]),
+      email: new FormControl('', [Validators.required, Validators.email]),
       phone: new FormControl('', [Validators.required]),
       password: new FormControl('', Validators.required),
     });
@@ -41,5 +37,9 @@ export class RegisterComponent {
       this.frmFormulario.get('password')?.value,
       this.frmFormulario.getRawValue()
     );
+  }
+
+  conlole(): void {
+    console.log(this.frmFormulario);
   }
 }
