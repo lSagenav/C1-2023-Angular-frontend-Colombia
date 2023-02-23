@@ -6,5 +6,5 @@ export interface TransferInterface {
   inCome: userInterface;
   outCome: userInterface;
   reason: string;
-  dateTime: number;
+  dateTime: number | Date;
 }

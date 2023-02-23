@@ -1,1 +1,62 @@
-<p>deposit-history works!</p>
+<!-- <p>transfer-history works!</p>
+<header>
+  <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+    <h1 class="display-4 fw-normal">Historial De Tranferencias</h1>
+    <p class="fs-5 text-muted">Scorpion Bank</p>
+  </div>
+</header>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-8 mx-auto">
+      <table class="table bg-white rounded border">
+        <thead>
+          <tr>
+            <th scope="col">ID del deposito</th>
+            <th scope="col">cuenta</th>
+            <th scope="col">Fecha</th>
+            <th scope="col">Deposito</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let deposit of historyDeposit">
+            <td>{{ deposit.id }}</td>
+            <td>{{ deposit.account.id }}</td>
+            <td>{{ deposit.dateTime }}</td>
+            <td>{{ deposit.amount }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div> -->
+<p>transfer-history works!</p>
+<header>
+  <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+    <h1 class="display-4 fw-normal">Historial De Depositos</h1>
+    <p class="fs-5 text-muted">Scorpion Bank</p>
+  </div>
+</header>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-8 mx-auto">
+      <table class="table bg-white rounded border">
+        <thead>
+          <tr>
+            <th scope="col">ID del deposito</th>
+            <th scope="col">cuenta</th>
+            <th scope="col">Fecha</th>
+            <th scope="col">Deposito</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let deposit of historyDeposit">
+            <td>{{ deposit.id }}</td>
+            <td>{{ deposit.account.id }}</td>
+            <td>{{ deposit.dateTime | date : 'dd/MM/yyyy' }}</td>
+            <td>{{ deposit.amount | currency }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

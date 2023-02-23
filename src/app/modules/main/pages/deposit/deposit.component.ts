@@ -15,7 +15,7 @@ export class DepositComponent {
     private readonly depositService: DepositService
   ) {
     this.account = '';
-    this.amount = '0';
+    this.amount = '';
   }
   redirect() {
     this.router.navigate(['deposit']);

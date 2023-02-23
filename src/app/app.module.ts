@@ -1,10 +1,10 @@
+import { DepositHistoryComponent } from './modules/main/components/deposit-history/deposit-history.component';
 import { TransferHistoryComponent } from './modules/main/components/transfer-history/transfer-history.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { SharedModule } from 'src/app/shared/shared.module';
 
 import { AppRoutingModule } from './app-routing.module';
-
 import { AppComponent } from './modules/main/pages/app/app.component';
 import { IndexComponent } from './modules/auth/pages/Login/index.component';
 import { MyPipePipe } from './modules/main/pipes/my-pipe/my-pipe.pipe';
@@ -14,7 +14,7 @@ import { DepositComponent } from './modules/main/pages/deposit/deposit.component
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UpdateUserComponent } from './modules/main/components/update-user/update-user.component';
-import { environment } from '../environments/environment';
+import { environment } from 'src/environments/environment.prod';
 
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
@@ -39,6 +39,7 @@ import { NarvarComponent } from './modules/main/components/narvar/narvar.compone
     TransferComponent,
     TransferHistoryComponent,
     NarvarComponent,
+    DepositHistoryComponent,
   ],
   imports: [
     BrowserModule,

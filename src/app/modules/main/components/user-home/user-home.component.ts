@@ -21,6 +21,10 @@ export class UserHomeComponent {
     localStorage.setItem('idcuenta', id);
     this.router.navigate(['transferHistory']);
   }
+  envioIdDesposit(id: string) {
+    localStorage.setItem('idcuenta', id);
+    this.router.navigate(['depositHistory']);
+  }
   // eslint-disable-next-line @angular-eslint/use-lifecycle-interface
   ngOnInit(): void {
     const idStorage = localStorage.getItem('id') as string;
