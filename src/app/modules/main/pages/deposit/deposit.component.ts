@@ -1,4 +1,3 @@
-import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { DepositService } from '../../services/deposit/deposit.service';
@@ -9,23 +8,25 @@ import { DepositService } from '../../services/deposit/deposit.service';
   styleUrls: ['./deposit.component.scss'],
 })
 export class DepositComponent {
+  account: string;
+  amount: string;
   constructor(
     private router: Router,
     private readonly depositService: DepositService
-  ) {}
+  ) {
+    this.account = '';
+    this.amount = '0';
+  }
   redirect() {
     this.router.navigate(['deposit']);
   }
-  form = new FormGroup({
-    account: new FormControl('', Validators.required),
-    amount: new FormControl('', Validators.required),
-  });
 
   async onSubmit(): Promise<void> {
     const Input = {
-      account: this.form.value.account,
-      amount: this.form.value.amount,
+      account: this.account,
+      amount: this.amount,
     };
+    console.log(Input);
     const data = await this.depositService.getAllDeposit(Input);
     console.log(data);
   }

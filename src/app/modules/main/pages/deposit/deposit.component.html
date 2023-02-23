@@ -2,7 +2,7 @@
 <sofka-narvar></sofka-narvar>
 <div>
   <div class="container">
-    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div>
       <div class="space"></div>
       <h1>Scorpion Bank</h1>
       <p style="text-align: center">
@@ -10,18 +10,13 @@
           src="https://t4.ftcdn.net/jpg/04/22/92/29/360_F_422922955_XaGCE7Nqe8DyLiY7mGe5SACyp8N4oHTB.jpg"
           alt="Logo InternetCtrl" />
       </p>
-      <div class="placeholder">
-        <input class="input" formControlName="account" placeholder="account" />
-      </div>
-      <div class="space"></div>
-      <div class="input1">
-        <input formControlName="amount" placeholder="amount" />
-      </div>
-      <div class="space"></div>
-      <div>
-        <button class="submit">Submit</button>
-      </div>
-      <div class="space"></div>
-    </form>
+      <label>Account:</label>
+      <input type="text" [(ngModel)]="account" />
+
+      <label>Amount:</label>
+      <input type="text" [(ngModel)]="amount" />
+
+      <button type="button" (click)="onSubmit()">Enviar</button>
+    </div>
   </div>
 </div>
