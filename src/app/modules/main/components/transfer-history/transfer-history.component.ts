@@ -18,7 +18,6 @@ export class TransferHistoryComponent implements OnInit {
   }
   ngOnInit(): void {
     this.idAccount = localStorage.getItem('idcuenta') ?? '';
-    console.log(this.idAccount);
     this.historyService.getTransferHistory(this.idAccount).subscribe({
       next: data => {
         console.log(data);
