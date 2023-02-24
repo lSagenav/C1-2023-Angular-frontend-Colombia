@@ -43,6 +43,7 @@ export class UserHomeComponent {
       },
     });
   }
+
   redirect() {
     this.router.navigate(['infouser']);
   }

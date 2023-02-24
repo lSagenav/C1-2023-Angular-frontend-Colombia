@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { IndexComponent } from './modules/auth/pages/Login/index.component';
-import { RegisterComponent } from './modules/auth/pages/register/register.component';
 import { InfoUserComponent } from './modules/main/pages/info-user/info-user.component';
 import { TransferComponent } from './modules/main/pages/transfer/transfer.component';
 import { DepositComponent } from './modules/main/pages/deposit/deposit.component';
@@ -15,7 +13,7 @@ import { UserComponent } from './modules/main/pages/user/user.component';
 import { DepositHistoryComponent } from './modules/main/components/deposit-history/deposit-history.component';
 
 const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['login']);
-const redirectLoggedInToinfouser = () => redirectLoggedInTo(['UserComponent']);
+const redirectUnauthorizedToinfouser = () => redirectLoggedInTo(['UserComponent']);
 
 const routes: Routes = [
   {

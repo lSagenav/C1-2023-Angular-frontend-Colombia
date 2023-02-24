@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DataService } from '../../services/data/data.service';
 
 @Component({
   selector: 'sofka-user',
@@ -7,5 +8,8 @@ import { Component } from '@angular/core';
 })
 export class UserComponent {
   // eslint-disable-next-line @typescript-eslint/no-empty-function
-  constructor() {}
+  constructor(private dataService: DataService) {}
+  cambiarNombre() {
+    this.dataService.nameEvent$.emit('the best designs by Scorpion');
+  }
 }

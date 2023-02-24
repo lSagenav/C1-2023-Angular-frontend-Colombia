@@ -38,10 +38,17 @@
               <td>{{ users.balance | currency }}</td>
               <td>{{ users.state }}</td>
             </tr>
-            <button type="button" (click)="envioid(users.id)">
+            <button
+              class="btn btn-primary"
+              type="button"
+              (click)="envioid(users.id)">
               ver Historial
             </button>
-            <button type="button" (click)="envioIdDesposit(users.id)">
+            <hr />
+            <button
+              class="btn btn-primary"
+              type="button"
+              (click)="envioIdDesposit(users.id)">
               ver Historial Depositos
             </button>
           </tbody>
@@ -49,6 +56,10 @@
       </div>
     </div>
   </div>
-  <button type="button" (click)="logout()">cerrar Sesion</button>
+
+  <button type="button" class="btn btn-primary" (click)="logout()">
+    cerrar Sesion
+  </button>
   <br />
+  <hr />
 </div>
