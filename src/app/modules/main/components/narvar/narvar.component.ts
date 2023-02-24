@@ -6,7 +6,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./narvar.component.scss'],
 })
 export class NarvarComponent {
-  @Input() name: string | undefined;
+  @Input() name!: string;
 
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   constructor() {}

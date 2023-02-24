@@ -9,8 +9,13 @@ import { LoginService } from '../../services/login/login.service';
   styleUrls: ['./index.component.scss'],
 })
 export class IndexComponent {
-  frmFormulario: FormGroup;
+  dataSharing!: string;
 
+  envioDeDatos($event: string) {
+    this.dataSharing = $event;
+  }
+  frmFormulario: FormGroup;
+  obtainData!: string;
   constructor(
     private readonly authService: AuthService,
     private loginService: LoginService
